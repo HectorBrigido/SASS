@@ -1,0 +1,58 @@
+$mainColor: rgb(7, 72, 7);
+$fontFamily: "Poppins",
+Arial,
+Helvetica,
+sans-serif;
+$white: rgb(226, 226, 226);
+$gray: rgb(37, 37, 37);
+@function divideUnits($value, $quantity) {
+    $result: $value / $quantity;
+    @return $result
+}
+
+@mixin avatar($size, $type) {
+    width: $size;
+    height: $size;
+    @if $type==circle {
+        border-radius: 50%;
+        background-color: blue;
+    }
+    @else {
+        border-radius: 10px;
+    }
+}
+
+@mixin flexbox {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin shadowContainer($color, $padding, $blur) {
+    box-shadow: 0px 0px $blur $color;
+    padding: $padding;
+    border-radius: 15px;
+    background-color: $color;
+}
+
+@mixin laptops {
+    @media screen and (max-width: 70rem) {
+        @content
+    }
+    ;
+}
+
+%link {
+    text-decoration: none;
+    color: $white;
+}
+
+%button {
+    display: block;
+    border: none;
+    border-radius: 30px;
+    color: $white;
+    text-align: center;
+    padding: 15px 0;
+    width: divideUnits(100%, 2);
+    font-weight: 600;
+}

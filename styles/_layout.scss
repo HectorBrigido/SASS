@@ -1,0 +1,82 @@
+body {
+    font-family: $fontFamily;
+    font-weight: 600;
+}
+
+html,
+body,
+p,
+a {
+    margin: 0;
+}
+
+header {
+    @include flexbox;
+    background-color: $gray;
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: center;
+    img {
+        width: 100px;
+    }
+}
+
+nav {
+    @include flexbox;
+    gap: 10px;
+    @include laptops {
+        display: none;
+    }
+}
+
+a {
+    font-weight: 500;
+    font-size: 1 rem;
+    @extend %link
+}
+
+article {
+    @include flexbox;
+    gap: 10px;
+    i {
+        cursor: pointer;
+        transition: all .2s ease;
+        &:hover {
+            transform: scale(1.08);
+        }
+        &:first-child {
+            width: 24px;
+        }
+        &:last-child {
+            width: 23px;
+        }
+        img {
+            width: 100%;
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: $mainColor;
+    @include flexbox;
+    article {
+        img {
+            width: 80px;
+        }
+        nav {
+            @include flexbox;
+            flex-direction: column;
+            gap: 10px;
+            a {
+                @extend %link;
+            }
+        }
+        >a {
+            display: block;
+            @extend %link;
+        }
+    }
+}

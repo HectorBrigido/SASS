@@ -1,0 +1,21 @@
+.main-button {
+    @extend %button;
+    background-color: chartreuse;
+}
+
+.secondary-button {
+    @extend %button;
+    background-color: dimgray;
+}
+
+main {
+    article {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        @include shadowContainer(rgb(198, 97, 192), 20px, 2px);
+        &.mixin {
+            @include shadowContainer($mainColor, 10px, 0px);
+        }
+    }
+}
